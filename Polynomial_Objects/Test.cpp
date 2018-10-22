@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Quadratic.h"
+#include "TermList.h"
 
 void testQuadratcic() {
 	Quadratic test1(0, -9, 0);
@@ -16,9 +17,45 @@ void testQuadratcic() {
 	std::cin >> myQuad;
 	std::cout << myQuad;
 }
-int main() {
-	testQuadratcic();
 
+void testTermList() {
+	TermList terms;
+
+	std::cout << "Empty Polynomial" << std::endl;
+	std::cout << terms << std::endl;
+
+	std::cout << std::endl << "Adding terms to Polynomial" << std::endl;
+	terms.addTerm(3, 6);
+	terms.addTerm(7, 2);
+	terms.addTerm(1, -1);
+	terms.addTerm(0, 9);
+
+	std::cout << terms << std::endl;
+
+	std::cout << std::endl << "Inserting term into the middle of Polynomial" << std::endl;
+	terms.addTerm(5, 1);
+	std::cout << terms << std::endl;
+
+	std::cout << std::endl << "Removing Term from Polynomial" << std::endl;
+	terms.addTerm(3, -6);
+	std::cout << terms << std::endl;
+
+	std::cout << std::endl << "Removing the highest and lowest exponent term" << std::endl;
+	terms.addTerm(7, -2);
+	terms.addTerm(0, -9);
+	std::cout << terms << std::endl;
+
+	std::cout << std::endl << "Removing all terms" << std::endl;
+	terms.addTerm(5, -1);
+	terms.addTerm(1, 1);
+	std::cout << terms << std::endl;
+
+}
+
+int main() {
+	//testQuadratcic();
+
+	testTermList();
 
 	std::cin.get();
 }
