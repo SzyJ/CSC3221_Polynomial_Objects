@@ -12,7 +12,7 @@ Quadratic::Quadratic(const Quadratic& other)
 
 Quadratic::~Quadratic() {}
 
-int Quadratic::computeValue(int& x) {
+int Quadratic::computeValue(int x) {
 	return (a * pow(x, 2)) + (b * x) + c;
 }
 
@@ -56,6 +56,33 @@ Quadratic Quadratic::operator*(const int& other) {
 Quadratic Quadratic::operator/(const int& other) {
 	return Quadratic(a / other, b / other, c / other);
 }
+
+bool Quadratic::operator==(const Quadratic& other){
+	return getA() == other.getA()
+		&& getB() == other.getB()
+		&& getC() == other.getC();
+}
+
+bool Quadratic::operator!=(const Quadratic& other){
+	return !(*this == other);
+}
+
+Quadratic& Quadratic::operator+=(const Quadratic& other){
+	a += other.getA();
+	b += other.getB();
+	c += other.getC();
+	
+	return *this;
+}
+
+Quadratic& Quadratic::operator-=(const Quadratic& other){
+	a -= other.getA();
+	b -= other.getB();
+	c -= other.getC();
+
+	return *this;
+}
+
 
 std::istream& operator>>(std::istream& inStream, Quadratic& quadratic) {
 	int a, b, c;

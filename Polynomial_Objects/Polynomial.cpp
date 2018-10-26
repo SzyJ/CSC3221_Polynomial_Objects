@@ -105,6 +105,16 @@ bool Polynomial::operator!=(const Polynomial& other) {
 	return !(*this == other);
 }
 
+Polynomial Polynomial::operator=(const Polynomial& other) {
+	if (this == &other) {
+		return *this;
+	}
+
+	Polynomial newPoly(other);
+
+	return newPoly;
+}
+
 std::ostream& operator<<(std::ostream& outStream, const Polynomial& polynomial) {
 	outStream << polynomial.terms;
 

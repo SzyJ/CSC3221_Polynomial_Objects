@@ -10,9 +10,16 @@ void testQuadratcic() {
 	Quadratic sub = test1 - test2;
 
 	std::cout << test1 << std::endl;
+	std::cout << "When x=2 : " << test1.computeValue(2) << std::endl;
+
 	std::cout << test2 << std::endl;
+	std::cout << "When x=2 : " << test2.computeValue(2) << std::endl;
+
 	std::cout << add << std::endl;
+	std::cout << "When x=2 : " << add.computeValue(2) << std::endl;
+
 	std::cout << sub << std::endl;
+	std::cout << "When x=2 : " << sub.computeValue(2) << std::endl;
 
 	Quadratic myQuad;
 	std::cin >> myQuad;

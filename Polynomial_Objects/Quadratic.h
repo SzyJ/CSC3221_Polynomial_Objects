@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 
+/*!
+	A class representing a polynomial of degree 2.
+*/
 class Quadratic {
 private:
 	int a, b, c;
@@ -11,8 +14,13 @@ public:
 	Quadratic(const Quadratic& other);
 	~Quadratic();
 
-	// Methods
-	int computeValue(int& x);
+	//! Calculates the value of the quadratic if the given value for x
+	//! was the variable used.
+	/*!
+	  \param x The value for x in the polynomial.
+	  \return The result of the calculation.
+	*/
+	int computeValue(int x);
 
 	// Getters
 	int getA() const;
@@ -29,6 +37,11 @@ public:
 	Quadratic operator-(const Quadratic& other);
 	Quadratic operator*(const int& other);
 	Quadratic operator/(const int& other);
+
+	bool operator==(const Quadratic& other);
+	bool operator!=(const Quadratic& other);
+	Quadratic& operator+=(const Quadratic& other);
+	Quadratic& operator-=(const Quadratic& other);
 };
 
 std::istream& operator>>(std::istream& inStream, Quadratic& quadratic);
